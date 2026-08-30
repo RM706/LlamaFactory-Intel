@@ -13,7 +13,7 @@ Intel GPU 环境下的Llama Factory，支持xpu
 使用方法：
 
 1. 下载 `entrypoint.sh` `llama-factory.dockerfile` `llama-factory.compose`
-2. 构建镜像
+2. 构建镜像（或者使用已经构建好的[biiibiii/llamafactory-intel](https://hub.docker.com/r/biiibiii/llamafactory-intel)）
 
 ```
 docker build \
