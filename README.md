@@ -24,3 +24,8 @@ docker build \
 
 3. 启动容器 `docker compose -f llama-factory.compose up -d`
 4. 打开浏览器，访问:`http://localhost:7860`
+
+---
+
+小提示：
+1. `llama-factory.compose`中的`devices`需要根据自己的环境来设定，具体看[Intel/PyTorch](https://hub.docker.com/r/intel/pytorch)的说明
