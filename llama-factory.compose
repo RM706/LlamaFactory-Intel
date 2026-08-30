@@ -1,0 +1,22 @@
+services:
+  llamafactory:
+    image: biiibiii/llamafactory-intel:latest
+    container_name: llamafactory
+    ports:
+      - 7860:7860
+    devices:
+      - /dev/dri/renderD128:/dev/dri/renderD128
+    group_add:
+      - "${HOST_VIDEO_GID:-105}"
+    volumes:
+      - ./llamafactory/data:/opt/LlamaFactory/data
+      - ./llamafactory/saves:/opt/LlamaFactory/saves
+      - ./llamafactory/config:/opt/LlamaFactory/llamaboard_config
+      - ./llamafactory/cache:/opt/LlamaFactory/llamaboard_cache
+      - ./llamafactory/models:/opt/LlamaFactory/models
+      - ./llamafactory/input:/opt/LlamaFactory/input
+      - ./llamafactory/output:/opt/LlamaFactory/output
+    environment:
+      HF_ENDPOINT: 'https://hf-mirror.com'
+      HF_HOME: '/opt/LlamaFactory'
+      MODELSCOPE_CACHE: '/opt/LlamaFactory'
